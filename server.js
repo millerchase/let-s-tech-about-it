@@ -7,18 +7,8 @@ const routes = require('./routes');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
 
-// session config
-const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const sess = {
-  secret: 'Super secret secret of secrets',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
+// import session config
+const { session, sess } = require('./config/session');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
