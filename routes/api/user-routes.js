@@ -19,6 +19,6 @@ router.route('/:id').get(getUserById).put(updateUser).delete(deleteUser);
 router.route('/login').post(loginUser);
 
 // /api/users/logout
-router.route('/logout').get(logoutUser);
+router.route('/logout').post(logoutUser);
 
 module.exports = router;

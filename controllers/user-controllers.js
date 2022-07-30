@@ -135,7 +135,7 @@ const userController = {
           req.session.username = dbUserData.username;
           req.session.loggedIn = true;
 
-          res.json({ user: dbUserData });
+          res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
       })
       .catch(err => {
