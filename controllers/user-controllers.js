@@ -1,4 +1,4 @@
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 
 const userController = {
   getAllUsers: (req, res) => {
@@ -7,7 +7,11 @@ const userController = {
       include: [
         {
           model: Post,
-          attributes: ['id', 'title', 'post_url', 'created_at']
+          attributes: ['id', 'title', 'post_body', 'post_url', 'created_at']
+        },
+        {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'created_at']
         }
       ]
     })
@@ -27,7 +31,11 @@ const userController = {
       include: [
         {
           model: Post,
-          attributes: ['id', 'title', 'post_url', 'created_at']
+          attributes: ['id', 'title', 'post_body', 'post_url', 'created_at']
+        },
+        {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'created_at']
         }
       ]
     })

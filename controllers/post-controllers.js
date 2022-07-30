@@ -1,9 +1,9 @@
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 
 const postController = {
   getAllPosts: (req, res) => {
     Post.findAll({
-      attributes: ['id', 'post_url', 'title', 'created_at'],
+      attributes: ['id', 'post_url', 'title', 'post_body', 'created_at'],
       order: [['created_at', 'DESC']],
       include: [
         {
@@ -38,7 +38,7 @@ const postController = {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'post_url', 'title', 'created_at'],
+      attributes: ['id', 'post_url', 'title', 'post_body', 'created_at'],
       include: [
         {
           model: User,
@@ -76,6 +76,7 @@ const postController = {
   addPost: (req, res) => {
     Post.create({
       title: req.body.title,
+      post_body: req.body.post_body,
       post_url: req.body.post_url,
       user_id: req.session.user_id
     })
