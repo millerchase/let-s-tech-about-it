@@ -18,4 +18,4 @@ router
   .put(withAuth, updatePost)
   .delete(withAuth, deletePost);
 
-module.export = router;
+module.exports = router;

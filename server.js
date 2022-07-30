@@ -5,7 +5,7 @@ const routes = require('./routes');
 
 // handlebars config
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
 
 // import session config
 const { session, sess } = require('./config/session');
