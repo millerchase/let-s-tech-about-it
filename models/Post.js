@@ -21,10 +21,7 @@ Post.init(
       defaultValue: ''
     },
     post_url: {
-      type: DataTypes.STRING,
-      validate: {
-        isUrl: true
-      }
+      type: DataTypes.STRING
     },
     user_id: {
       type: DataTypes.INTEGER,

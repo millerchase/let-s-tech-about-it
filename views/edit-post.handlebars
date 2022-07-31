@@ -3,9 +3,18 @@
   <h2>Edit Post</h2>
   <form class='edit-post-form'>
     <div>
-      <input type='text' name='post-title' value='{{post.title}}' />
-      <textarea name="post-body" cols="30" rows="10">{{post.post_body}}</textarea>
-      <input type="text" name='post-url' value='{{post.post_url}}' />
+        <div>
+            <label for="post-title">Edit Title:</label>
+            <input type='text' name='post-title' value='{{post.title}}' />
+        </div>
+        <div>
+            <label for="post-body">Edit Post Body:</label>
+            <textarea name="post-body" cols="30" rows="10">{{post.post_body}}</textarea>
+        </div>
+        <div>
+            <label for="post-url">Edit Reference Link:</label>
+            <input type='text' name='post-url' value='{{post.post_url}}' />
+        </div>
     </div>
     <div>
       by you on
