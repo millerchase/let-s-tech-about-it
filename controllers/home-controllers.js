@@ -1,6 +1,40 @@
+const { Post, User, Comment } = require('../models');
+
 const homeController = {
   renderHomepage: (req, res) => {
-    res.render('homepage', { loggedIn: req.session.loggedIn });
+    Post.findAll({
+      attributes: ['id', 'title', 'post_body', 'post_url', 'created_at'],
+      order: [['created_at', 'DESC']],
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        },
+        {
+          model: Comment,
+          attributes: [
+            'id',
+            'comment_text',
+            'post_id',
+            'user_id',
+            'created_at'
+          ],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        }
+      ]
+    })
+      .then(dbPostData => {
+        // serialize the data before passing to template
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        res.render('homepage', { posts, loggedIn: true });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   },
 
   renderLogin: (req, res) => {
@@ -8,6 +42,44 @@ const homeController = {
       res.redirect('/');
     }
     res.render('login');
+  },
+
+  renderSinglePost: (req, res) => {
+    Post.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: ['id', 'post_url', 'title', 'post_body', 'created_at'],
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        },
+        {
+          model: Comment,
+          attributes: [
+            'id',
+            'comment_text',
+            'post_id',
+            'user_id',
+            'created_at'
+          ],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        }
+      ]
+    })
+      .then(dbPostData => {
+        // serialize the data before passing to template
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        res.render('single-post', { posts });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   }
 };
 
