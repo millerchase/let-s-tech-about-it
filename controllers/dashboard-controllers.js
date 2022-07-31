@@ -73,8 +73,8 @@ const dashboardController = {
           res.status(400).json({ message: 'No post found with this id' });
         }
 
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+        const post = dbPostData.get({ plain: true });
+        res.render('edit-post', { post, loggedIn: true });
       })
       .catch(err => {
         console.log(err);

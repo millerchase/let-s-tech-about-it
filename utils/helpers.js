@@ -13,6 +13,9 @@ module.exports = {
   },
 
   format_url: url => {
+    if (!url) {
+      return '';
+    }
     return url
       .replace('http://', '')
       .replace('https://', '')
