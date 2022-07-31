@@ -73,8 +73,11 @@ const homeController = {
     })
       .then(dbPostData => {
         // serialize the data before passing to template
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('single-post', { posts });
+        const post = dbPostData.get({ plain: true });
+        res.render('single-post', {
+          post,
+          loggedIn: req.session.loggedIn
+        });
       })
       .catch(err => {
         console.log(err);
