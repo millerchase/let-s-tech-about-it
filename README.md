@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-'Let's Tech About It' is a blog site for discussing all things tech! Share anything new and exciting, or a solution you've found for a difficult issue. Add a referrence link to share your sources. As well as commit on other view and comment on other developer's posts.
+'Let's Tech About It' is a MVC style blog site built for discussing all things tech! Share anything new and exciting, or a solution you've found for a difficult issue. Add a reference link to share your sources. As well as commit on other view and comment on other developer's posts.
 
 #### Deployed at: [https://lets-tech-about-it-73491.herokuapp.com/](https://lets-tech-about-it-73491.herokuapp.com/)
 
@@ -20,6 +20,16 @@ Navigate to the link above, sign in, then start sharing!
 
 ---
 
+## Technologies
+
+- JavaScript
+- express-handlebars
+- express-session
+- MySQL2
+- Sequelize
+- connect-session-sequelize
+- bcrypt
+
 ## License
 
 Copyright &copy; 2022 Chase Miller &lt;millerchase>
@@ -31,6 +41,10 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
+
+## Contributors
+
+Created with ❤️ by Chase Miller.
 
 ## Questions
 
