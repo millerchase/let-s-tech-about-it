@@ -54,6 +54,16 @@ async function loginFormHandler(event) {
   }
 }
 
+const switchToSignUp = () => {
+  document.querySelector('#login-section').classList.add('hidden');
+  document.querySelector('#signup-section').classList.remove('hidden');
+};
+
+const switchToLogin = () => {
+  document.querySelector('#login-section').classList.remove('hidden');
+  document.querySelector('#signup-section').classList.add('hidden');
+};
+
 // signup event listener
 document
   .querySelector('.signup-form')
@@ -63,3 +73,12 @@ document
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
+
+// switch forms event handlers
+document
+  .querySelector('#switch-signup')
+  .addEventListener('click', switchToSignUp);
+
+document
+  .querySelector('#switch-login')
+  .addEventListener('click', switchToLogin);

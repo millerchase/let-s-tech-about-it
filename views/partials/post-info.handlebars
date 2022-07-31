@@ -1,23 +1,32 @@
 <article class='post'>
-  <div class='title'>
-    <h3>{{title}}</h3>
-    <p class='post-body'>{{post_body}}</p>
-    {{#if post_url}}
-      <p class='post-url'>
-        Ref link:
-        <a href='{{post_url}}' target='_blank'>{{format_url post_url}}</a>
-      </p>
-    {{/if}}
+  <div class='card'>
+    <div class='card-title'>
+      {{#if post_url}}
+        <h3>{{title}}</h3>
+
+        <span class='post-url'>
+          - (
+          <a href='{{post_url}}' target='_blank'>{{format_url post_url}}</a>
+          )
+        </span>
+      {{else}}
+        <h3>{{title}}</h3>
+      {{/if}}
+    </div>
+    <div class='card-body'>
+      <p class='post-body'>{{post_body}}</p>
+    </div>
+    <div class='card-footer meta'>
+      Posted by
+      {{user.username}}
+      on
+      {{format_date created_at}}
+      |
+      <a href='/post/{{id}}'>
+        {{comments.length}}
+        {{format_plural 'comment' comments.length}}
+      </a>
+    </div>
   </div>
-  <div class='meta'>
-    by
-    {{user.username}}
-    on
-    {{format_date created_at}}
-    |
-    <a href='/post/{{id}}'>
-      {{comments.length}}
-      {{format_plural 'comment' comments.length}}
-    </a>
-  </div>
+
 </article>

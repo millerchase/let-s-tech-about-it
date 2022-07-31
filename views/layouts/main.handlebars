@@ -3,7 +3,14 @@
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans:wght@400;700&family=Roboto&display=swap'
+      rel='stylesheet'
+    />
     <title>Let's Tech About It</title>
+    <link rel='stylesheet' href='/css/style.css' />
   </head>
 
   <body>
@@ -13,11 +20,12 @@
           <a href='/'>Let's Tech About It</a>
         </h1>
         <nav>
+          <a href='/'>Home</a>
           {{#if loggedIn}}
-            <a href='/dashboard'>dashboard</a>
-            <button id='logout' class='btn-no-style'>logout</button>
+            <a href='/dashboard'>Dashboard</a>
+            <button id='logout' class='btn-no-style'>Logout</button>
           {{else}}
-            <a href='/login'>login</a>
+            <a href='/login'>Login</a>
           {{/if}}
         </nav>
       </header>
@@ -25,7 +33,8 @@
         {{{body}}}
       </main>
       <footer>
-        Thanks for visiting!
+        Copyright &copy; 2022 Chase Miller &lt;millerchase>
+        <br />Thanks for visiting!
       </footer>
     </div>
     {{#if loggedIn}}
